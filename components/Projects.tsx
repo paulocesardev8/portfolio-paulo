@@ -17,9 +17,23 @@ export const Projects = () => {
         { name: "GA4 API", icon: <SiGoogleanalytics className="text-[#F9AB00]" size={16} /> },
       ],
       liveUrl: "https://sintoniasolutions.com.br",
-      githubUrl: "#", // Se tiver repositório público, coloque o link aqui
+      githubUrl: "https://github.com/paulocesardev8/portfolio-antigo"
     },
-    // Você pode copiar e colar o bloco acima para adicionar mais projetos no futuro!
+
+    {
+      id: 1,
+      title: "SG Brasil Porcelanato - Página de Vendas",
+      description: "Desenvolvimento de interface premium para o mercado de revestimentos e arquitetura. Otimizado para Core Web Vitals, garantindo uma experiência de usuário (UX) fluida e captação qualificada de leads.",
+      image: "/sgbrasilporcelanato.png", // Nome da imagem que você colocou na pasta public
+      tech: [
+        { name: "Next.js", icon: <SiNextdotjs className="text-white" size={16} /> },
+        { name: "React", icon: <SiReact className="text-[#61DAFB]" size={16} /> },
+        { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6] bg-white rounded-sm" size={14} /> },
+        { name: "Tailwind", icon: <SiTailwindcss className="text-[#06B6D4]" size={16} /> },
+      ],
+      liveUrl: "https://sgbrasilporcelanato.com.br",
+      githubUrl: "https://github.com/paulocesardev8/sg-brasil-landing-page"
+    },
   ];
 
   return (

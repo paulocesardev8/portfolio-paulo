@@ -57,5 +57,16 @@ body {
 /* Pausa a animação ao passar o mouse (opcional, mas elegante) */
 .hover-pause:hover .animate-scroll-left,
 .hover-pause:hover .animate-scroll-right {
-  animation-play-state: paused;
+  animation-play-state: move;
+}
+
+/* --- Animação do Carrossel de Depoimentos --- */
+@keyframes infinite-scroll {
+  0% { transform: translateX(0); }
+  /* O -12px compensa exatamente o espaço (gap) entre os cards para não dar "tranco" no loop */
+  100% { transform: translateX(calc(-50% - 12px)); } 
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 40s linear infinite;
 }

@@ -10,7 +10,8 @@ import {
   SiGoogleanalytics, SiMeta
 } from "react-icons/si";
 import { TbDeviceAnalytics } from "react-icons/tb";
-
+import { Footer } from "@/components/Footer";
+import { Certifications } from "@/components/Certifications";
 
 
 
@@ -190,6 +191,8 @@ export default function Home() {
       <Experience />
       <Projects />
       <Testimonials />
+      <Certifications />
+      <Footer />
 
     </main>
   );
