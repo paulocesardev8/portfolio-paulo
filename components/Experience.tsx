@@ -35,7 +35,7 @@ export const Experience = () => {
       id: 2,
       role: "Gestor Estrategista de Tráfego & Dados",
       company: "DOOP Comunicação",
-      date: "2024 - Atual",
+      date: "2024 - Dez 2025",
       description: "Planejamento e execução de campanhas de alta performance em Google Ads e Meta Ads. Análise técnica de dados para otimização de ROI. Colaboração direta com times de desenvolvimento para implementação de tags e melhorias de conversão (CRO).",
       tech: ["Google Ads", "Meta Ads", "Data Analysis", "CRO", "Web Analytics", "Reporting"],
     },

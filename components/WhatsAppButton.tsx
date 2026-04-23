@@ -1,21 +1,25 @@
 "use client";
 
 import React from "react";
-import { sendGAEvent } from '@next/third-parties/google';
 
 export default function WhatsAppButton() {
-  const phoneNumber = "5519987358774"; // SEU NÚMERO
+  const phoneNumber = "5519987358774";
   const message = encodeURIComponent("Olá Paulo! Vim pelo site e tenho uma dúvida.");
 
   const handleClick = () => {
-    // 1. Dispara evento para o Facebook (Meta Pixel)
-    if (typeof window !== "undefined" && (window as any).fbq) {
-      (window as any).fbq('track', 'Contact'); 
+    if (typeof window === "undefined") return;
+
+    // Meta Pixel
+    if ((window as any).fbq) {
+      (window as any).fbq('track', 'Contact');
     }
 
-    // 2. Dispara evento para o Google Analytics
-    // Isso vai aparecer como "click_whatsapp" nos seus relatórios
-    sendGAEvent('event', 'click_whatsapp', { value: 'contato' });
+    // Google Tag Manager
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push({
+      event: 'click_whatsapp',
+      category: 'contato',
+    });
   };
 
   return (

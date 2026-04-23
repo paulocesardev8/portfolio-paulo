@@ -19,14 +19,14 @@ export const BentoItem = ({
   title?: string;
 }) => {
   return (
-    <div className={`
+    <section id="sobre"  className={`
       relative overflow-hidden rounded-3xl border border-white/[0.1] 
       group/bento hover:shadow-2xl hover:shadow-purple-500/10 transition duration-300 
       flex flex-col space-y-4 p-6 lg:p-8
       bg-[rgb(4,7,29)] bg-[linear-gradient(90deg,rgba(4,7,29,1),0%,rgba(12,14,35,1),100%)]
       ${className}
     `}>
-      {/* Aqui está o segredo do John: A div inteira move para a direita no hover */}
+      {/* A div inteira move para a direita no hover */}
       <div className="group-hover/bento:translate-x-2 transition duration-300 relative z-10 flex flex-col h-full justify-center">
         {title && (
           <div className="font-sans text-xl lg:text-2xl font-bold text-white mb-3">
@@ -37,6 +37,6 @@ export const BentoItem = ({
           {children}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
