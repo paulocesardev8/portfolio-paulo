@@ -171,7 +171,7 @@ export default function Home() {
       <nav>
         <div className="nav-inner">
           <a href="/" className="logo">
-            <Image src="/logo.png" alt="Sintonia Solutions" width={32} height={32} />
+            <Image src="/logo.png" alt="Sintonia Solutions" width={32} height={32} style={{mixBlendMode:'screen'}} />
             <span className="logo-text">Sintonia<span>.</span></span>
           </a>
           <a href={WA_GERAL} className="nav-cta" target="_blank" rel="noopener noreferrer">Falar com Paulo</a>
