@@ -318,8 +318,8 @@ export default function Home() {
                 <li>IA aplicada no processo</li>
                 <li>Bônus: gravação do Aulão de 4h</li>
               </ul>
-              <div className="preco-val">R$197<span style={{fontSize:'16px',fontWeight:400,color:'var(--muted)'}}>/mês</span></div>
-              <div className="preco-info">ou R$497 à vista · apenas 10 vagas por turma</div>
+              <div className="preco-val">R$297<span style={{fontSize:'16px',fontWeight:400,color:'var(--muted)'}}>/mês</span></div>
+              <div className="preco-info">ou R$697 à vista · apenas 10 vagas por turma</div>
               <a href={WA_90D} className="btn-primary" target="_blank" rel="noopener noreferrer" style={{justifyContent:'center'}}>Garantir minha vaga</a>
             </div>
           </div>
