@@ -20,7 +20,7 @@ const depoimentos = [
   { nome: "Guilherme", nicho: "Adestrador", hora: "10:22", texto: "Os colegas de profissão que me desculpem, mas trabalhar com o Paulo é muito bom. Sabe explicar, tem paciência pra ensinar e traz clareza!", foto: "/depoimentos/guilherme_-_adestrador.png" },
   { nome: "Leandro", nicho: "Peças para Frigorífico", hora: "13:55", texto: "Eu estava com dificuldades para melhorar a comunicação do meu negócio, o Paulo foi cirúrgico no que precisava! É diferenciado!", foto: "/depoimentos/leandro.png" },
   { nome: "Flávia", nicho: "Terapeuta", hora: "17:15", texto: "Sua aula é maravilhosa! Tudo é importante, mas você Paulo é sensacional! Direto no ponto! 🙏", foto: "/depoimentos/flavia.png" },
-  { nome: "Ronald", nicho: "Loja de Roupas", hora: "17:30", texto: "Sem sombra de dúvidas, que energia esse rapaz tem. Muito bom o comprometimento e entrega do Paulo! 🔥", foto: null },
+  { nome: "Ronald", nicho: "Loja de Roupas", hora: "17:30", texto: "Sem sombra de dúvidas, que energia esse rapaz tem. Muito bom o comprometimento e entrega do Paulo! 🔥", foto: "/depoimentos/ronald.png" },
 ];
 
 export default function Home() {
@@ -52,7 +52,6 @@ export default function Home() {
 
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 80px; position: relative; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: -150px; right: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(232,98,26,0.07) 0%, transparent 70%); pointer-events: none; }
-        .hero .container { position: relative; z-index: 1; }
         .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-dim); border: 1px solid var(--accent-border); border-radius: 100px; padding: 6px 14px; font-size: 13px; color: var(--accent); margin-bottom: 28px; font-weight: 500; }
         .hero-badge::before { content: ''; width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
         @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.8); } }
@@ -66,8 +65,10 @@ export default function Home() {
 
         .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
         .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
-        .btn-ghost { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); color: var(--text); font-family: 'Syne', sans-serif; font-weight: 600; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+        .btn-ghost { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.22); color: var(--text); font-family: 'Syne', sans-serif; font-weight: 600; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
         .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+        .btn-white { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #0c0c0c; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: all 0.2s; }
+        .btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
 
         section { padding: 96px 0; }
         .section-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
@@ -134,7 +135,7 @@ export default function Home() {
         .dep-nome { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 14px; color: var(--wpp-green); }
         .dep-nicho { font-size: 12px; color: #666; }
         .dep-online { width: 8px; height: 8px; background: var(--wpp-green); border-radius: 50%; margin-left: auto; flex-shrink: 0; }
-        .dep-wpp-body { padding: 16px; background: var(--wpp-bg) url('/fundo%20whatsapp.png') repeat; background-size: auto; }
+        .dep-wpp-body { padding: 16px; background: var(--wpp-bg); }
         .dep-bubble { background: var(--wpp-bubble); border-radius: 0 10px 10px 10px; padding: 10px 14px 8px; position: relative; display: inline-block; max-width: 100%; }
         .dep-bubble::before { content: ''; position: absolute; top: 0; left: -7px; width: 0; height: 0; border-style: solid; border-width: 0 8px 8px 0; border-color: transparent var(--wpp-bubble) transparent transparent; }
         .dep-texto { font-size: 14px; color: #e9e9e9; line-height: 1.55; }
@@ -153,9 +154,12 @@ export default function Home() {
         footer { padding: 40px 0; border-top: 1px solid var(--border); }
         .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
         .footer-text { font-size: 13px; color: var(--muted); }
-        .footer-links { display: flex; gap: 24px; }
+        .footer-links { display: flex; gap: 24px; align-items: center; }
         .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--accent); }
+        .footer-social { display: flex; gap: 16px; align-items: center; }
+        .footer-social a { color: var(--muted); transition: color 0.2s; display: flex; }
+        .footer-social a:hover { color: var(--accent); }
 
         @media (max-width: 768px) {
           .paulo-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -171,7 +175,7 @@ export default function Home() {
       <nav>
         <div className="nav-inner">
           <a href="/" className="logo">
-            <Image src="/logo.png" alt="Sintonia Solutions" width={32} height={32} style={{mixBlendMode:'screen'}} />
+            <Image src="/logo.png" alt="Sintonia Solutions" width={32} height={32} />
             <span className="logo-text">Sintonia<span>.</span></span>
           </a>
           <a href={WA_GERAL} className="nav-cta" target="_blank" rel="noopener noreferrer">Falar com Paulo</a>
@@ -184,8 +188,8 @@ export default function Home() {
           <h1>Pare de rodar anúncio<br /><em>no improviso.</em></h1>
           <p className="hero-sub">Mentoria particular ou acompanhamento de 90 dias com método real. Tráfego que converte — do zero à escala.</p>
           <div className="hero-actions">
-            <a href={WA_90D} className="btn-primary" target="_blank" rel="noopener noreferrer">Quero o Ciclo 90 Dias</a>
-            <a href={WA_1x1} className="btn-ghost" target="_blank" rel="noopener noreferrer">Mentoria 1:1</a>
+            <a href="#planos" className="btn-primary">Quero o Ciclo 90 Dias</a>
+            <a href="#planos" className="btn-ghost">Mentoria 1:1</a>
           </div>
           <div className="hero-stats">
             <div><div className="stat-num">90</div><div className="stat-label">dias de acompanhamento</div></div>
@@ -273,7 +277,7 @@ export default function Home() {
 
       <div className="divisor" />
 
-      <section>
+      <section id="planos">
         <div className="container">
           <div className="section-tag">Como trabalhar comigo</div>
           <h2 className="section-title">Duas formas de evoluir.</h2>
@@ -283,6 +287,7 @@ export default function Home() {
               <div className="oferta-icon">⚡</div>
               <h3>Mentoria Particular 1:1</h3>
               <p className="oferta-desc">Uma hora comigo, focada 100% no seu negócio. Análise da conta, diagnóstico e plano de ação. Sem enrolação.</p>
+              <br />
               <ul className="oferta-lista">
                 <li>Análise ao vivo da sua conta</li>
                 <li>Plano de ação personalizado</li>
@@ -297,7 +302,7 @@ export default function Home() {
                 <div className="upsell-text">Receba o resumo completo da sessão por escrito e o vídeo para revisar quando quiser.</div>
               </div>
               <div className="preco-info">Pacote 5 horas — R$597 (gravação + ata incluídos)</div>
-              <a href={WA_1x1} className="btn-ghost" target="_blank" rel="noopener noreferrer" style={{justifyContent:'center'}}>Agendar minha hora</a>
+              <a href={WA_1x1} className="btn-white" target="_blank" rel="noopener noreferrer" style={{justifyContent:'center'}}>Agendar minha hora</a>
             </div>
             <div className="oferta-card destaque">
               <div className="oferta-badge">Recomendado</div>
@@ -363,7 +368,7 @@ export default function Home() {
         <div className="container">
           <div className="section-tag">Dentro da mentoria</div>
           <h2 className="section-title">Como é na prática.</h2>
-          <p className="section-sub" style={{marginBottom: '48px'}}>Capturas reais das sessões ao vivo — mão na massa, sem enrolação.</p>
+          <p className="section-sub">Capturas reais das sessões ao vivo — mão na massa, sem enrolação.</p><br></br>
         </div>
         <CarrosselAulas />
       </section>
@@ -384,6 +389,14 @@ export default function Home() {
           <div className="footer-inner">
             <div className="footer-text">© 2026 Sintonia Solutions · Paulo Cesar</div>
             <div className="footer-links">
+              <div className="footer-social">
+                <a href="https://www.instagram.com/sintoniasolutions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+                </a>
+                <a href="https://www.facebook.com/sintoniasolutions" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+              </div>
               <a href="/politica-de-privacidade">Política de Privacidade</a>
               <a href={WA_GERAL} target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
